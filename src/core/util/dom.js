@@ -173,7 +173,7 @@ export function addDomEvent(obj, typeArr, handler, context) {
         });
         //firefox
         if (type === 'mousewheel' && Browser.gecko) {
-            type = 'DOMMouseScroll';
+            type = 'wheel';
         }
         obj.addEventListener(type, eventHandler, false);
     }
@@ -191,7 +191,7 @@ export function removeDomEvent(obj, typeArr, handler) {
     function doRemove(type, callback) {
         //mouse wheel in firefox
         if (type === 'mousewheel' && Browser.gecko) {
-            type = 'DOMMouseScroll';
+            type = 'wheel';
         }
         obj.removeEventListener(type, callback, false);
     }
